@@ -23,7 +23,7 @@ module Places
         :location => location,
         :radius => radius,
         :sensor => sensor,
-        :query => name
+        :query => query
       }
       
       if types
