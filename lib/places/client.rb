@@ -14,7 +14,7 @@ module Places
       radius = options.delete(:radius) || 500
       sensor = options.delete(:sensor) || false
       types  = options.delete(:types)
-      name  = options.delete(:name)
+      query  = CGI::escape(options.delete(:query))
       lat = options.delete(:lat)
       lng = options.delete(:lng)
       location = [lat,lng].join(',')
@@ -23,7 +23,7 @@ module Places
         :location => location,
         :radius => radius,
         :sensor => sensor,
-        :name => name
+        :query => name
       }
       
       if types
