@@ -17,7 +17,7 @@ module Places
       query  = CGI::escape(options.delete(:query))
       #lat = options.delete(:lat)
       #lng = options.delete(:lng)
-      location = [lat,lng].join(',')
+      #location = [lat,lng].join(',')
 
       options = {
         :sensor => sensor,
