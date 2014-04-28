@@ -29,7 +29,7 @@ module Places
       #  options.merge!(:types => types)
       #end
         
-      mashup(self.class.get("/textsearch/json", :query => options.merge(self.default_options)))
+      mashup(self.class.get("/textsearch/json?query=#{query}&sensor=#{sensor}&key=#{@api_key}"))
     end
     
     def details(options={})    
