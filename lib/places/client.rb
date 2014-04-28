@@ -11,25 +11,23 @@ module Places
     end
 
     def search(options={})
-      radius = options.delete(:radius) || 500
+      #radius = options.delete(:radius) || 500
       sensor = options.delete(:sensor) || false
-      types  = options.delete(:types)
+      #types  = options.delete(:types)
       query  = CGI::escape(options.delete(:query))
-      lat = options.delete(:lat)
-      lng = options.delete(:lng)
+      #lat = options.delete(:lat)
+      #lng = options.delete(:lng)
       location = [lat,lng].join(',')
 
       options = {
-        :location => location,
-        :radius => radius,
         :sensor => sensor,
         :query => query
       }
       
-      if types
-        types = (types.is_a?(Array) ? types.join('|') : types)
-        options.merge!(:types => types)
-      end
+      #if types
+      #  types = (types.is_a?(Array) ? types.join('|') : types)
+      #  options.merge!(:types => types)
+      #end
         
       mashup(self.class.get("/search/json", :query => options.merge(self.default_options)))
     end
