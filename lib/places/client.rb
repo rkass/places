@@ -13,15 +13,27 @@ module Places
     def search(options={})
       #radius = options.delete(:radius) || 500
       sensor = options.delete(:sensor) || false
+<<<<<<< HEAD
       #types  = options.delete(:types)
       query  = CGI::escape(options.delete(:query))
       #lat = options.delete(:lat)
       #lng = options.delete(:lng)
       #location = [lat,lng].join(',')
+=======
+      types  = options.delete(:types)
+      name  = options.delete(:name)
+      lat = options.delete(:lat)
+      lng = options.delete(:lng)
+      location = [lat,lng].join(',')
+>>>>>>> parent of f57cf0e... replaced name option with query option in search
 
       options = {
         :sensor => sensor,
+<<<<<<< HEAD
         :query => query
+=======
+        :name => name
+>>>>>>> parent of f57cf0e... replaced name option with query option in search
       }
       
       #if types
