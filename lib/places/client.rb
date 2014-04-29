@@ -11,6 +11,7 @@ module Places
     end
 
     def search(options={})
+=begin
       radius = options.delete(:radius) || 500
       sensor = options.delete(:sensor) || false
       types  = options.delete(:types)
@@ -29,7 +30,9 @@ module Places
         types = (types.is_a?(Array) ? types.join('|') : types)
         options.merge!(:types => types)
       end
-    
+=end
+      query = options.delete(:query)
+      options = {:query => query}
       mashup(self.class.get("/search/json", :query => options.merge(self.default_options)))    
     end
     
