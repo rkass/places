@@ -7,7 +7,7 @@ module Places
     attr_reader :api_key
                 
     def initialize(options={})
-      @api_key = options[:api_key] || GooglePlaces.api_key
+      @api_key = options[:api_key] || MyGooglePlaces.api_key
     end
 
     def search(options={})
