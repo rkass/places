@@ -32,8 +32,8 @@ module Places
       end
 =end
       query = options.delete(:query)
-      options = {:query => query}
-      mashup(self.class.get("/search/json", :query => options.merge(self.default_options)))    
+      options = {:query => query, :sensor => false}
+      mashup(self.class.get("/textsearch/json", :query => options.merge(self.default_options)))    
     end
     
     def details(options={})    
